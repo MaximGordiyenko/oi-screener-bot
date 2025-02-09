@@ -20,6 +20,12 @@ bot.start((ctx) => {
   ctx.reply(`Hello! Please send me the desired percentage change for price notifications (from 0.5 for 0.5% to 100 for 100%).`);
 });
 
+bot.command('stop', (ctx) => {
+  const chatId = ctx.chat.id;
+  // Logic to remove chatId from the notification list
+  ctx.reply('You have unsubscribed from notifications.');
+});
+
 // Handle user input for the percentage change
 bot.on('text', async (ctx) => {
   const chatId = ctx.chat.id;
