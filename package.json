@@ -5,7 +5,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/app.js"
+    "dev": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +19,6 @@
     "nodemon": "^3.1.9",
     "pg": "^8.13.3",
     "sequelize": "^6.37.5",
-    "telegraf": "^4.16.3",
     "ws": "^8.18.0"
   }
 }
