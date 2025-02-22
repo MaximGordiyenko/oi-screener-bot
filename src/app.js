@@ -2,7 +2,6 @@ import { Bot } from "grammy";
 import dotenv from "dotenv";
 import { User } from './models/User.js';
 import { sequelize } from './config/db.js';
-import { startWebSocket } from './services/websocket.js';
 
 import { handleStart } from './commands/start.js';
 import { handleUsers } from './commands/users.js';
@@ -12,6 +11,8 @@ import { handleSetPump } from './commands/setPump.js';
 import { handleSetInterval } from './commands/setInterval.js';
 import { handleSetPercentage } from './commands/setPercentage.js';
 import { handleHelp } from './commands/help.js';
+import { starBinanceWebSocket } from './services/binanceWebSocket.js';
+import { startByBitWebSocket } from './services/byBitWebSocket.js';
 
 dotenv.config();
 
@@ -75,5 +76,6 @@ console.log("🤖 Bot started");
 // --- DATABASE AND WEBSOCKET STARTUP ---
 await sequelize.sync()
 
-// Start Binance WebSocket for BTC/USDT and ETH/USDT
-startWebSocket(bot);
+// Start Binance WebSocket
+starBinanceWebSocket(bot).then(r => r);
+startByBitWebSocket(bot).then(r => r);

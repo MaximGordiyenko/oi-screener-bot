@@ -2,7 +2,7 @@ import axios from "axios";
 
 const BINANCE_API_URL = `${process.env.BINANCE_API_URL}/24hr`;
 
-export const getTopTradingPairs = async (limit = 100) => {
+export const getBinanceTopPairs = async (limit = 100) => {
   try {
     const response = await axios.get(BINANCE_API_URL);
     const sortedPairs = response.data
