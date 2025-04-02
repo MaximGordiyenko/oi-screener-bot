@@ -1,18 +1,18 @@
 import { Bot } from "grammy";
 import dotenv from "dotenv";
-import { User } from './models/User.js';
-import { sequelize } from './config/db.js';
+import { User } from './src/models/user.js';
+import { sequelize } from './src/config/db.js';
 
-import { handleStart } from './commands/start.js';
-import { handleUsers } from './commands/users.js';
-import { handleCallbackQuery } from './commands/callbacks.js';
-import { handleSetPairs } from './commands/setPairs.js';
-import { handleSetPump } from './commands/setPump.js';
-import { handleSetInterval } from './commands/setInterval.js';
-import { handleSetPercentage } from './commands/setPercentage.js';
-import { handleHelp } from './commands/help.js';
-import { starBinanceWebSocket } from './services/binanceWebSocket.js';
-import { startByBitWebSocket } from './services/byBitWebSocket.js';
+import { handleStart } from './src/commands/start.js';
+import { handleUsers } from './src/commands/users.js';
+import { handleCallbackQuery } from './src/commands/callbacks.js';
+import { handleSetPairs } from './src/commands/setPairs.js';
+import { handleSetPump } from './src/commands/setPump.js';
+import { handleSetInterval } from './src/commands/setInterval.js';
+import { handleSetPercentage } from './src/commands/setPercentage.js';
+import { handleHelp } from './src/commands/help.js';
+import { starBinanceWebSocket } from './src/services/binanceWebSocket.js';
+import { startByBitWebSocket } from './src/services/byBitWebSocket.js';
 
 dotenv.config();
 
